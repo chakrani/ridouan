@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body,html{
+overflow:hidden;
+}
+.fullwidth-video {
+        position: absolute;
+        top: -1%;
+        left: -1%;
+        z-index: -1;
+        height: 104%;
+        width: 104%;
+        overflow: hidden;
+}
+.fullwidth-video video {
+        position: absolute;
+        z-index: -1;
+        top:49%;
+        left:49%;
+        height:auto;
+        width:auto;
+	
+        min-width:101%;
+        min-height:101%;
+        transform:translate(-50%, -50%);
+        object-fit:cover;
+	
+}
+</style>
+</head>
+
+<body onlaoad="_aniaa()">
+
+<center>
+<table style='width:100%;height:100%;position:fixed;left:0;top:0;z-index:878787;opacity:1'><tr><td align='center' valign='middle'>
+
+</td></tr></table>
+</center>
+<script>
+var onzt=10;
+var ffv=0;
+var bh=0;
+var pcc=0;
+var looked=false;
+
+var pages="<h1 style='color:white'>World News, markets </h1><h3 style='color:white'>Opion ..</h3>";
+
+
+
+var  xmla= window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+
+
+function fds(){
+
+        ret=pages;
+        onzt=0;
+        looked=false;
+        document.getElementById('cent').style.opacity=1;
+        ffv=0;
+        bh=0;
+        document.getElementById('cent').innerHTML=ret;
+
+}
+
+
+function ltriggerlentur() {
+                if ((xmla.readyState == 4) && (xmla.status == 200)) {
+		pages=xmla.responseText;
+		fds();
+		}
+}
+
+
+function getPage() {
+    pcc++;
+    xmla= window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmla.onreadystatechange = ltriggerlentur;
+    xmla.open("GET", "news"+(pcc%3)+".php?v="+Math.random(), true);
+    xmla.send(null);
+}
+
+
+function resa(){
+
+ffv++;
+
+if(ffv>55){
+        bh=bh+.08;
+        if(bh<1){
+        document.getElementById('cent').style.opacity=1-bh;
+        }
+	else{
+		if(looked==false){
+			looked=true;
+			
+		}
+		
+	}
+}
+
+
+setTimeout("resa()", 200)
+
+}
+//resa();
+
+
+
+function aniaa(){
+	getPage();
+        setTimeout("aniaa()", 20000);
+}
+
+
+
+</script>
+
+<div class="fullwidth-video" style="border: 0px solid red;">
+
+</div>
+<div  id='cent' style='text-align:left;width:100%;position:fixed;left:0;top:0;height:100%;color:white;font-size:22px;background-color:rgba(0,0,0,0.5)'></div>
+<div style='position:fixed;left:5%;top:5%;width:90%;height:90%;color:white;font-size:24px' id='textn'></div>
+<script>
+
+var  xmlhttpS= window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");
+
+function pS3(){
+        if (xmlhttpS.readyState==4 && xmlhttpS.status==200){
+        	fdghhj=xmlhttpS.responseText;
+			document.getElementById('textn').innerHTML=fdghhj;
+	}
+}
+var nte=0;
+function klaarkick(){
+        xmlhttpS= window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttpS.onreadystatechange=pS3;
+        xmlhttpS.open("GET", "news"+(nte%3)+".php?ra="+Math.random(), true);
+        xmlhttpS.send(null);
+	nte++;
+		setTimeout("klaarkick()", 21000);
+	
+}
+klaarkick();
+</script>
+</body>
+</html>
+

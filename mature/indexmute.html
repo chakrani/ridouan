@@ -1,0 +1,67 @@
+<html>
+<meta charset="UTF-8">
+<iframe src="indexclclw.html?reerd" style="position:fixed;left:-1%;top:-1%;width:102%;height:102%;"></iframe><div srvc="src.index4.php?dir=_plani&amp;vo=8" style="position:fixed;left:-1%;top:-1%;width:102%;height:102%;"></div>
+
+
+
+
+<div id='sta'></div>
+<table style='background-color:transparent;width:10%;height:120%;position:fixed;left:3%;top:5%;'><tr><td align='left' valign='top'><!--iframe src='src.index44.php?dir=_pla&vo=8' style='background;black;opacity:.9;width:150px;height:150px;border-radius:75px;    border: 5px solid #F9F9f9;    -moz-border-radius: 75px; -webkit-border-radius: 75px;    box-shadow: 0px 0px 48px #f4f4f4;    -moz-box-shadow: 0px 0px 48px #f4f4f4; -webkit-box-shadow: 0px 0px 48px #f4f4f4;'></iframe--></td></tr></table>
+<img id='w' src='window.png' style='width:100%;height:100%;position:fixed;left:0;top:0'>
+<script>
+var xc=new Array();
+var yc=new Array();
+var onof=new Array();
+dd="";
+for(t=0;t<9;t++){
+xc[t]=Math.floor(Math.random()*screen.width);
+yc[t]=Math.floor(Math.random()*screen.height*.5);
+onof=Math.random();
+dd=dd+"<div id='st"+t+"' style='position:fixed;left:"+xc[t]+"px;top:"+yc[t]+"px'><span style='color:#cccccc'>.</span></div>";
+}
+document.getElementById('sta').innerHTML=dd;
+function fc(){
+for(r=0;r<1;r++){
+	t=Math.floor(xc.length*Math.random());
+	xc[t]=Math.floor(Math.random()*screen.width);
+yc[t]=Math.floor(Math.random()*screen.height*.5);
+	if(Math.random()>.4){
+		document.getElementById('st'+t).style.display='';
+		document.getElementById('st'+t).style.left=xc[t]+"px";
+		document.getElementById('st'+t).style.top=yc[t]+"px";
+
+	}
+	else{
+	document.getElementById('st'+t).style.display='none';
+	}
+}
+setTimeout("fc()", Math.ceil(1000+(4000*Math.random())))
+}
+fc();
+
+sf=window.location.href;
+fs=sf.split("?");
+if(fs.length<2){
+//document.write("<iframe src='guestbook/index.php?sound=music|float|east|hardrock|hiphop|house|irish|jazz|asia|strings|symfony|piano|default&g=x' style='position:fixed;left:-1%;top:-1%;width:102%;height:102%'></iframe>");
+}
+else{
+//document.write("<iframe src='guestbook/index.php?"+fs[1]+"' style='position:fixed;left:-1%;top:-1%;width:102%;height:102%'></iframe>");
+
+}
+</script>
+
+<script>
+function cw(){
+d=new Array();
+d[0]="window.png?aa";
+d[1]="window2.png?aaa";
+d[2]="window4.png?aaaa";
+d[3]="window8.png?aaaa"
+document.getElementById('w').src=d[Math.floor(Math.random()*d.length)];
+
+setTimeout("cw()", 15000);
+
+}
+cw();
+</script>
+</html>

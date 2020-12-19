@@ -1,0 +1,19 @@
+<script>
+function esea(){
+document.getElementById('webcam1').src="https://freeshell.de/~trans1/fo/uploadedm.png?uniq="+Math.random();
+}
+function doI(){
+document.getElementById('webcam1').src="https://freeshell.de/~trans1/fo/uploadedm.png?uniq="+Math.random();
+}
+
+
+document.write("<img  style='width:120%;height:120%;position:fixed;top:0;left:0' id='webcam1' style='border-color:#000000; border-style:solid'  src='https://freeshell.de/~trans1/fo/uploadedm.png?uniq="+Math.random()+"' border='0'>");
+
+
+function change(){
+document.getElementById('webcam1').src='https://freeshell.de/~trans1/fo/uploadedm.png?u='+Math.random();
+setTimeout('change()', 650);
+}
+change();
+
+</script>

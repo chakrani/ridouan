@@ -1,0 +1,49 @@
+<html>
+<meta charset="UTF-8">
+<div id='a' style='opcity:0;position:fixed;left:0;top:0;width:100%;height:100%'>
+</div>
+<div id='b' style='opacity:0;position:fixed;left:0;top:0;width:100%;height:100%'>
+</div>
+
+<script>
+var tel=0;
+var n=0;
+function wai(){
+if(n==2){
+if((tel%2)==0){
+document.getElementById('b').style.opacity=1;
+document.getElementById('a').style.opacity=0;
+}
+else{
+document.getElementById('a').style.opacity=1;
+document.getElementById('b').style.opacity=0;
+}
+}
+n++;
+setTimeout("wai()", 3000);
+}
+wai();
+ds="<iframe style='position:fixed;top:-1%;left:-0%;width:100%;height:101%' src='qupotes"+(0)+".php?cc"+Math.random()+"'></iframe>";
+document.getElementById('a').style.opacity=0;
+document.getElementById('a').style.opacity=0;
+document.getElementById('a').innerHTML=ds;
+document.getElementById('b').innerHTML=ds;
+tel++;
+function dsa(){
+if((tel%2)==0){
+ds="<iframe style='position:fixed;top:-1%;left:-0%;width:100%;height:101%' src='qupotes"+(0)+".php?cc"+Math.random()+"'></iframe>";
+document.getElementById('a').style.opacity=0;
+document.getElementById('a').innerHTML=ds;
+}
+else{
+ds="<iframe style='position:fixed;top:-1%;left:-0%;width:100%;height:101%' src='qupotes"+(0)+".php?cc"+Math.random()+"'></iframe>";
+document.getElementById('b').innerHTML=ds;
+document.getElementById('b').style.opacity=0;
+}
+n=0;
+tel++;
+setTimeout("dsa()", 38000);
+}
+dsa();
+</script>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<meta charset="UTF-8">
+<img id="map0" alt="map" style='position:fixed;left:-15%;width:130%;height:130%;top:-15%' src="https://static.meteoblue.com/pub/nemsglobal/maps/00CAPE_015.jpg">
+<script>
+var tel=3;
+function answ(){
+tel+=3;
+if(tel>=60){
+tel=3;
+}
+t=tel;
+
+
+d=new Date();
+h=d.getHours();
+gdg=t;
+fs="0";
+if(t<10){
+fs="00";
+}
+td="https://static.meteoblue.com/pub/nemsglobal/maps/00CAPE_"+fs+""+gdg+".jpg";
+
+document.title="aa"+td;
+document.getElementById('map0').src=td;
+
+
+
+setTimeout("answ()", 350);
+}
+answ();
+</script>
+</html>

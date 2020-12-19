@@ -1,0 +1,32 @@
+<html>
+<meta charset="UTF-8">
+<img id="map0" alt="map" style='position:fixed;left:-3%;width:104%;height:108%;top:-4%' src="https://static.meteoblue.com/pub/nemsglobal/maps/00SMINT_024.jpg">
+<script>
+var tel=0;
+function answ(){
+tel+=24;
+if(tel>=144){
+tel=24;
+}
+t=tel;
+
+
+d=new Date();
+h=d.getHours();
+gdg=t;
+fs="";
+if(t<100){
+fs="0";
+}
+td="https://static.meteoblue.com/pub/nemsglobal/maps/00SMINT_"+fs+""+gdg+".jpg";
+
+document.title="aa"+td;
+document.getElementById('map0').src=td;
+
+
+
+setTimeout("answ()", 350);
+}
+answ();
+</script>
+</html>

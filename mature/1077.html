@@ -1,0 +1,304 @@
+<head>
+<meta charset="UTF-8">
+<script>
+var nrspec=new Array();
+sftyo=0;
+function numberTBAA(nr){
+var neej=nr;
+cc=neej.toString(2);
+return cc;
+}
+function reverseString(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+var tels=sftyo;
+a2=1;
+cd=1;
+c=0;
+function numberTBAA(nr){ var neej=nr; cc=neej.toString(2); return cc;}
+function reverseString(str) { var newString = ""; for (var i = str.length - 1; i >= 0; i--){ newString += str[i]; } return newString; }
+var tels=sftyo;
+a2=1;
+cd=1;
+c=0;
+rete=0;
+bb=0;
+ret=0;
+nrspec[0]=107;
+/*for(t=0;t<Math.pow(2,16);t+=1){
+		fs=t.toString(2);
+		fs2=reverseString(fs);
+		sf=parseInt(fs2,2);
+		ds=(sf/2)*Math.pow(-1, (sf%2));
+		sdd=ds&sf;
+		bb+=sdd;
+				tw=t-1;
+			if((bb>Math.pow(2,4) && bb<Math.pow(2,7)) || (bb>Math.pow(2,16) && bb<Math.pow(2,17))){
+				if(!(ret==0 ||  ret==4 ||  ret==6 || ret==8 ||  ret==10 || ret==14 || ret==17 || ret==18 || ret==19 || ret==21 || ret== 22 || ret==23 || ret==2 || bb==35 || bb==38 || bb==49 || bb==54 || bb==79)){
+				nrspec[rete]=bb; 
+				rete++;			
+			}
+			ret++;
+		}		
+}
+/*
+bb=0;
+ret=rete;
+/*
+for(t=0;t<Math.pow(2,17);t+=1){
+		fs=t.toString(2);
+		fs2=reverseString(fs);
+		sf=parseInt(fs2,2);
+		ds=(sf/2)*Math.pow(-1, (sf%2));
+		sdd=ds&sf;
+		bb+=sdd;
+		if(bb>Math.pow(2,4) && bb<Math.pow(2,7)){
+
+		if(bb==35 || bb==38 || bb==49 || bb==54 || bb==79 ){
+		}
+		else{
+			nrspec[ret]=bb;
+			ret++;
+			}
+		}		
+}
+*/
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
+function removewithfilter(arr) { 
+            let outputArray = arr.filter(function(v, i, self) 
+            { 
+                  
+                return i == self.indexOf(v); 
+            }); 
+              
+            return outputArray; 
+} 
+
+
+nrspec=removewithfilter(nrspec);
+
+var lines=new Array();
+var sliceheight=300;
+var slicelenth=150;
+var begs=0;
+var cellunr=Math.floor(nrspec.length*Math.random());
+var rule = 0;
+var starting = "r";
+var canvas, context;		
+var currstate, nextstate;
+var timer;
+var currrow = 0;
+function doStRuleNr() {		
+			canvas = document.getElementById("canvas");
+			context = canvas.getContext('2d');
+			rule_set((nrspec[(tels%nrspec.length)]-1));
+			
+			document.title=nrspec[(tels%nrspec.length)]+" "+tels;
+			tels++;			
+			doStRuleNrc();				
+			setTimeout("doStRuleNr()", 5500);					
+}
+function wow() {
+			var scroll = false;					
+			if (!scroll || currrow < slicelenth - 1) {
+				currrow++;
+				currrow %= slicelenth;								
+			} else {
+				var data = context.getImageData(0, 1, sliceheight, slicelenth - 1);
+				context.putImageData(data, 0, 0);
+				tel++;
+			}
+			for (var i = 0; i < sliceheight; i++) {
+				if (currstate[i])
+					context.fillStyle = "rgb(200, 200, 255)";
+				else context.fillStyle = "rgb(255, 255, 255)";	
+				var element = document.getElementById('canvas');
+				var positionInfo = element.getBoundingClientRect();
+				var height = positionInfo.height;
+				var width = positionInfo.width
+				context.fillRect(Math.round(i*1), Math.round(currrow*1), Math.round(1*width/sliceheight), Math.round(1*height/slicelenth));
+			if(rule>127){
+				var l,ll, c, r,rr;
+				if (i == 0) {
+					l = false;
+					ll= false;	
+					c = currstate[0]; 
+					r = currstate[1];
+					rr=currstate[2];
+				} 
+				else if(i==1){
+					ll=false;
+					l=currstate[0];
+					c=currstate[1];
+					r=currstate[2];
+					rr=currstate[3];
+				}
+				else if (i == sliceheight - 2) {
+					l = currstate[i-2]; 
+					ll=currstate[i-1]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=false;
+				}
+				
+				else if (i == sliceheight - 1) {
+					l = currstate[i-1];
+					ll = currstate[i-2];
+					c = currstate[i]; 
+					r = false;
+					rr=false;
+				} else {
+					l = currstate[i-1]; 
+					ll=currstate[i-2]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=currstate[i+2]
+				}	
+				var n = 0;
+				if (ll == true) n |= 16;
+				if (l == true) n |= 8;
+				if (c == true) n |= 4;
+				if (r == true) n |= 2;
+				if (rr == true) n |= 1;
+				}
+				else{
+					var l, c, r;
+					if (i == 0) {
+						l = false; c = currstate[0]; r = currstate[1];
+					} else if (i == sliceheight - 1) {
+						l = currstate[i-1]; c = currstate[i]; r = false;
+					} else {
+						l = currstate[i-1]; c = currstate[i]; r = currstate[i+1];
+					}	
+					var n = 0;
+					if (l == true) n |= 4;
+					if (c == true) n |= 2;
+					if (r == true) n |= 1;
+					nextstate[i] = (rule & Math.pow(2, n)) > 0;
+				}
+				nextstate[i] = (rule & Math.pow(2, n)) > 0;
+			}			
+			for (var i = 0; i < sliceheight; i++)
+				currstate[i] = nextstate[i];
+		lines[currrow]=currstate;			
+}		
+function doStRuleNrc(){
+			context.clearRect(0, 0, sliceheight, slicelenth);
+			currstate = new Array(sliceheight);
+			nextstate = new Array(sliceheight);			
+			for (var i = 0; i < sliceheight; i++) {
+				switch (starting) {
+					case 'r':
+						if (Math.floor(Math.random() * 2))
+							currstate[i] = true;
+						else currstate[i] = false;
+						break;
+				}
+			}
+	currrow = -1;
+	unt();
+}
+		
+
+		
+function unt() {
+	if(begs==0){
+		for(b=0;b<slicelenth;b++){
+			wow();
+		}
+	}
+	else{
+		wow();
+	}
+}
+		
+function rule_xor(num) {
+	rule ^= num;
+}
+		
+function rule_set(num) {
+		rule = num;	
+}				
+document.write("<div style='width:100%;height:100%;position:fixed;left:-15%;top:-20%;transform: perspective(250px) rotateX(-45deg);'><div style='width:250%;height:250%;left:-50%;top:-50%;position:fixed; transform: rotate(45deg);'><canvas id='canvas' style=';width:100%;height:100%'></canvas></div></div>");
+doStRuleNr();
+</script><title>66047 5</title></head>
+<div style='background-color:white;position:fixed;left:0;top:50%;width:100%;height:100%'></div>
+<div id='view' style='position:fixed;top:-10%;left:0;width:100%;height:100%'></div>
+<script>
+var arrs=['🎜']; //['0','1','2','3','4','5','6','7','8','9', 'a','b','c','d','e','f','g','h','i','j', 'k','l','m'];
+
+
+function popu(){
+paa=false;
+var m=100;
+h=2;
+for(a=1;a<m;a+=1){
+nx=Math.pow((364/365), ((a-1)*((a-1)-1)))*(h*(h-1));
+n=Math.pow((364/365), (a*(a-1)))*(h*(h-1));
+ny=Math.pow((364/365), ((a+1)*((a+1)-1)))*(h*(h-1));
+if(Math.round(100*nx)>=50 &&  Math.round(100*ny)<=50){
+ds=((h+64)*5);
+}
+}
+str="";
+
+rff=Math.random();
+bj=4*Math.random();
+
+
+
+
+for(h=-64;h<64;h++){
+
+
+for(a=1;a<m;a+=1){
+
+
+
+
+
+
+
+if(rff>.5){
+if(h>0){
+dd=(364-bj)/365;
+}
+else{
+dd=364/365;
+}
+}
+else{
+if(h<0){
+dd=(364-bj)/365;
+}
+else{
+dd=364/365;
+}
+}
+
+nx=Math.pow(dd, ((a-1)*((a-1)-1)))*(h*(h-1));
+n=Math.pow(dd, (a*(a-1)))*(h*(h-1));
+ny=Math.pow(dd, ((a+1)*((a+1)-1)))*(h*(h-1));
+
+
+if(Math.round(100*nx)>=50 &&  Math.round(100*ny)<=50){
+str+="<div style='position:fixed;left:"+Math.round(((((h+64)*5))+Math.round((screen.width)/2-ds))/screen.width*100)+"%;top:"+Math.round((Math.round(screen.height/1.35)-(a*5))/screen.height*60)+"%'>"+arrs[Math.floor(Math.random()*arrs.length)]+"</div>";
+
+}
+
+}
+}
+str=str+"";
+document.getElementById('view').innerHTML=str;
+setTimeout("popu()", 100);
+}
+popu();
+</script>
+
+<iframe src='107.html' style='position:fixed;left:0;top:46%;width:100%;height:54%' frameborder=0 border=0 scrolling='no' scrollbars='no'></iframe>

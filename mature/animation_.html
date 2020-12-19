@@ -1,0 +1,122 @@
+
+<html>
+<meta charset="UTF-8">
+<style type='text/css'>
+html,body{
+margin:0;
+padding:0;
+overflow:hidden;
+width:100%;
+height:100%;
+}
+body{
+background-color:black;
+}
+
+.ximg{
+width:110%;
+height:110%;
+position:fixed;
+left:0;
+top:0;
+}
+
+</style>
+<body onload="cf()">
+
+<script>
+q=window.location.href;
+ww=q.split("q=");
+qq=ww[1];
+document.write("<iframe class='ximg' id='xbd' src='VW.html?q="+qq.replace(" ","%20")+"' alt='fimage' border=0 frameborder=0 scrollbars='no' scrolling='no' ></iframe>");
+
+
+
+
+url="https://freeshell.de/~trans1/";
+
+ </script>
+
+
+<script>
+var qopa=0;
+var qte=110;
+var qdrg=1;
+var qtel=5;
+var qdrgs=1;
+var qotel=5;
+var qodrgs=1;
+var myde=1;
+var onoff=1;
+var onoff2=2;
+
+var onoftel=0;
+var onoftel2=0;
+function cf(){
+
+onoftel++;
+onoftel2++;
+
+
+if((onoftel%200)>25){
+onoff=1;
+}
+else{
+onoff=0;
+}
+
+
+if((onoftel2%200)>50){
+onoff2=1;
+}
+else{
+onoff2=0;
+}
+
+d=document.getElementById('xbd');
+d2=document.getElementById('xbd');
+d.style.width=qte+'%';
+d.style.height=qte+'%';
+d2.style.width=qte+'%';
+d2.style.height=qte+'%';
+d2.style.left=-qtel+'px';
+d2.style.top=-qotel+'px';
+d.style.left=-qtel+'px';
+d.style.top=-qotel+'px';
+d.style.opacity=.77111*qopa;
+d2.style.opacity=.7711*(1-qopa);
+
+qopa=qopa+(myde*(2/50)*onoff);
+if(qopa>=(1-(1/50))){
+
+	d2.src=d.src;
+	myde=-1;
+}
+
+
+
+//qte+=(qdrg*0.1*onoff);
+if(qte<105|| qte>125){
+
+qdrg*=-1;
+}
+
+qtel+=(qdrgs*1*onoff);
+if(qtel<2 || qtel>54){
+
+qdrgs*=-1;
+}
+
+
+qotel+=(qodrgs*1*onoff2);
+if(qotel<2 || qotel>44){
+
+qodrgs*=-1;
+}
+
+setTimeout('cf()', 150	);
+}
+
+</script>
+</body>
+</html>

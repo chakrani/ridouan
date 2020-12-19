@@ -1,0 +1,44 @@
+<img style='width:100%;height:100%;position:fixed;left:0;top:0' id='img' src='java/bin/XX0.jpg'>
+<img style='width:100%;height:100%;position:fixed;left:0;top:0' id='img2' src='java/bin/XX1.jpg'>
+
+<script>
+
+var tel=0;
+var tels=0;
+
+function ww(){
+
+//document.getElementById('img').src="java/bin/XX"+(tel%100)+".jpg";
+if(tels>=.95){
+tels=0;
+
+if(tels>99){
+tel=0;
+}
+tel++;
+
+document.getElementById('img2').src=document.getElementById('img').src;
+document.getElementById('img').src="java/bin/XX"+(tel%100)+".jpg";
+
+document.getElementById('img2').style.opacity=1-tels;
+document.getElementById('img').style.opacity=tels;
+tels=0;
+
+
+//document.getElementById('img').opacity=0;
+}
+else{
+document.getElementById('img2').style.opacity=1-tels;
+document.getElementById('img').style.opacity=tels;
+
+
+}
+
+tels+=.05;
+
+
+setTimeout("ww()", 100);
+
+}
+ww();
+</script>

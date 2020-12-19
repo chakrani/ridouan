@@ -1,0 +1,232 @@
+<div id='can'></div>
+<textarea id='collect' cols=10 rows=10 style='display:none;position:fixed;left:0;top:0;width:100%;heigt:100%'></textarea>
+<script>
+
+
+var sliceheight=100;
+var slicelength=100;
+var lines=new Array();
+var dindsf=0;
+var tel=0;
+var to=0;
+function init(){
+document.getElementById('collect').value="MkFile 0 1 480\nMTrk\n0 Tempo 500000\n0 Meta TrkEnd\nTrkEnd\n";
+
+
+tab="<table style='width:100%;height:100%;position:fixed;left:0;top:0' border=0 cellspacing=0 cellpadding=0>";
+for(a=0;a<sliceheight;a++){
+	ab=new Array();
+	tab+"<tr>";
+		for(b=0;b<slicelength;b++){
+			if(Math.random()>.5 && a>(4/10*sliceheight) && a<(6/10*sliceheight) && b>(4/10*sliceheight) && b<(6/10*sliceheight)){
+				ab[b]=true;
+				tab+="<td id='x"+a+"y"+b+"' style='background-color:transparent'> </td>";
+			}
+			else{
+				ab[b]=false;
+				tab+="<td id='x"+a+"y"+b+"' style='background-color:black'> </td>";				
+			}
+		}
+			lines[a]=ab;
+			tab+="</tr>";
+
+	}
+	tab+="</table>";
+	document.getElementById('can').innerHTML=tab;
+}
+
+
+var bgxRuleB=0;
+
+
+function swapblock(x,y, arr){
+
+	bb=arr[y];
+	cc=arr[(y+1)];
+	
+	
+	lb=bb[x];  rb=bb[(x+1)]
+	lo=cc[x];  ro=cc[(x+1)];
+	
+	res=new Array();
+	if(Math.random()>.5){
+		res[0]=rb;
+		res[1]=ro;
+		res[2]=lb;
+		res[3]=lo;
+	
+	}
+	else{
+		res[0]=lo;
+		res[1]=lb;
+		res[2]=ro;
+		res[3]=rb;
+	
+	}
+	return res;
+
+}
+
+
+function doLive(){
+
+
+linesx = new Array();
+
+
+for(t=0;t<(lines.length);t++){
+li=new Array();
+cc=lines[t];
+
+for(u=0;u<(cc.length);u++){
+li[u]=cc[u];
+}
+linesx[t]=li;
+}
+
+for(n=(bgxRuleB%2);n<(sliceheight-2);n+=2){
+	
+	for(m=(bgxRuleB%2);m<(sliceheight-2);m+=2){
+		re=swapblock(n, m, lines);
+		cc=linesx[n];
+		dd=linesx[(n+1)];
+		cc[m]=re[0];
+		cc[(m+1)]=re[1];
+		dd[m]=re[2];
+		dd[(m+1)]=re[3];	
+	}
+	
+}
+
+for(t=0;t<(linesx.length);t++){
+li=new Array();
+cc=linesx[t];
+
+for(u=0;u<(cc.length);u++){
+li[u]=cc[u];
+}
+lines[t]=li;
+}
+
+bgxRuleB++;
+
+
+
+
+/*
+for(t=0;t<(lines.length);t++){
+li=new Array();
+cc=lines[t];
+
+for(u=0;u<(cc.length);u++){
+li[u]=cc[u];
+}
+linesx[t]=li;
+}
+
+re=(bgxRuleB%2);
+bgxRuleB++;
+
+
+
+asas=sliceheight+re;
+
+
+
+for(t=re;t<(asas-1-re-2);t+=2){
+lix=new Array();
+lib=new Array();
+lib2=new Array();
+li=new Array();
+mi=new Array();
+
+
+for(u=0;u<(slicelength-1);u+=2){
+som=0;
+
+if(u==(slicelength-2)){
+cc=linesx[(slicelength-1)];
+}else{
+cc=linesx[u];
+}
+
+
+bb=linesx[(t+0)];
+
+li[0]=0;
+lb=cc[u];
+rb=cc[(u+1)];
+lo=bb[u];
+ro=bb[(u+1)];
+
+
+
+
+gh=Math.random();
+
+
+
+if(gh>=.5){
+llb=rb;
+llo=lb;
+rbb=ro;
+rro=lo;
+}
+else{
+llb=lo;
+llo=ro;
+rbb=lb;
+rro=rb;
+}
+li[u]=llb;
+li[(u+1)]=rbb;
+mi[u]=llo;
+mi[(u+1)]=rro;							
+}
+linesx[t]=li;
+linesx[(t+1)]=mi;
+}
+//alert(linesx.length);
+for(t=0;t<slicelength;t++){
+li=new Array();
+cc=linesx[t];
+//alert(cc.length);
+for(u=0;u<cc.length;u++){
+li[u]=cc[u];
+}			
+lines[t]=li;
+}
+
+*/
+
+for(a=0;a<sliceheight;a++){
+	ab=lines[a];
+	sdf=new Array();
+		for(b=0;b<slicelength;b++){
+		sdf[b]=ab[b];
+		d=document.getElementById('x'+a+'y'+b);
+		if(ab[b]==false){
+			d.style.backgroundColor="transparent";
+		}
+		else{
+		d.style.backgroundColor="black";
+		}
+	}
+	lines[a]=sdf;
+}
+
+
+
+
+
+
+setTimeout("doLive()", 50);
+}
+init();
+doLive();
+
+
+
+
+
+</script>

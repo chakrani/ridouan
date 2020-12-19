@@ -1,0 +1,114 @@
+
+
+<html>
+
+<style>
+html,body{
+width:100%;
+height:100%;
+opacity:.84;
+background-color:transparent;
+}
+#div1 {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 80px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    0 0 80px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+background-image:url(earth.jpg);
+background-size:400% 400%;
+}
+#div2, #div4 {
+width:102%;
+height:102%;
+overflow:hidden;
+}
+
+
+
+
+</style>
+
+<script>
+
+
+var al=1000+Math.ceil(1000*Math.random());
+var ho=500+Math.ceil(700*Math.random());
+var ddx=1;
+var ddy=1;
+var dx=1;
+var dy=1;
+
+if(Math.random()>.5){
+dx*=-1;
+}
+
+if(Math.random()>.5){
+dy*=-1;
+}
+var fwf=0;
+var t=0;
+function zwervers(){
+d=document.getElementById('div1');
+m=Math.random();
+if(m>.99936 ){
+dx=dx*-1;
+
+}
+m=Math.random();
+if(m>.99946 ){
+dy=dy*-1;
+
+}
+
+al=al+(dx*2);
+ho=ho+(dy*2);
+
+
+if(al<1000){
+dx*=-1;
+}
+if(al>6000){
+dx*=-1;
+}
+if(ho<100){
+dy*=-1;
+}
+if(ho>4000){
+dy*=-1;
+}
+
+
+
+d.style.backgroundPosition=-al+"px "+-ho+"px";
+
+setTimeout("zwervers()", 300);
+}
+
+function activest(){
+d=document.getElementById('stream');
+d.play();
+}
+
+</script>
+<body onload='zwervers()'>
+
+<div id="div1"  scrollbars='no' scrolling='no' >
+<div>
+
+
+
+</body>
+</html>
+
+

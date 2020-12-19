@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+}
+.fullwidth-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 120%;
+        width: 100%;
+        -webkit-transform-style: preserve-3d;
+        overflow: hidden;
+}
+.fullwidth-video video {
+        position: absolute;
+        z-index: -1;
+        top:50%;
+        left:50%;
+        height:auto;
+        width:auto;
+        min-width:100%;
+        min-height:100%;
+        transform:translate(-50%, -50%);
+        object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+<iframe id='cams' src="https://stream.inmoves.nl/camera/embedstream/161/" style="width:130%;height:130%;position:fixed;top:0%;left:0;overflow:hidden" scrollbars='no' scrolling='no' border=0 frameborder=0></iframe>
+
+<script>
+
+</script>
+
+
+</body>
+</html>
+

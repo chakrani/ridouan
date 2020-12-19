@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+<style>
+    body {
+      margin: 0px;
+overflow:hidden;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      color: #666;
+    }
+
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    #videoElement {
+      width: 100%;
+      height: 100%;
+
+    }
+    
+    button {
+
+    }
+
+    button:hover {
+      background-color: yellow;
+    }
+
+    button:active {
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+<video autoplay="true" id="videoElement">
+</video>
+</div>
+<script>
+    var video = document.querySelector("#videoElement");
+    var stopVideo = document.querySelector("#stop");
+
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+          video.srcObject = stream;
+        })
+        .catch(function (err0r) {
+          console.log("Something went wrong!");
+        });
+    }
+/*
+    stopVideo.addEventListener("click", stop, false);
+
+    function stop(e) {
+      var stream = video.srcObject;
+      var tracks = stream.getTracks();
+
+      for (var i = 0; i < tracks.length; i++) {
+        var track = tracks[i];
+        track.stop();
+      }
+
+      video.srcObject = null;
+    }
+*/
+  </script>
+</body>
+</html>

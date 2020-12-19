@@ -1,0 +1,21 @@
+<script>
+var seas=new Array();
+seas[0]="CEzSXX3tcmU";
+seas[1]="ogMTmdbYaPs";
+seas[2]="Uy1KnGEVpTA";
+for(i=0;i<seas.length;i++){
+document.write("<iframe style='visibility:hidden;width:130%;height:130%;top:-15%;left:-15%;position:fixed' src='https://www.youtube.com/embed/"+seas[i]+"?rel=0&autoplay=1&mute=1' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen id='s"+i+"'></iframe>");
+}
+
+var te=0;
+function deloop(){
+fd=te%seas.length;
+for(i=0;i<seas.length;i++){
+document.getElementById('s'+i).style.visibility='hidden';
+}
+document.getElementById('s'+fd).style.visibility='visible';
+te++;
+setTimeout("deloop()", 24000);
+}
+deloop();
+</script>

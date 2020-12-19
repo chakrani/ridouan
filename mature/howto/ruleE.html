@@ -1,0 +1,300 @@
+<div id='can'></div>
+<textarea id='collect' cols=10 rows=10 style='display:none;position:fixed;left:0;top:0;width:100%;heigt:100%'></textarea>
+<script>
+
+
+var sliceheight=100;
+var slicelenth=100;
+var lines=new Array();
+var dindsf=0;
+var tel=0;
+var to=0;
+function init(){
+document.getElementById('collect').value="MkFile 0 1 480\nMTrk\n0 Tempo 500000\n0 Meta TrkEnd\nTrkEnd\n";
+
+
+tab="<table style='width:100%;height:100%;position:fixed;left:0;top:0' border=0 cellspacing=0 cellpadding=0>";
+for(a=0;a<sliceheight;a++){
+	ab=new Array();
+	tab+"<tr>";
+		for(b=0;b<slicelenth;b++){
+			if(Math.random()>.5){
+				ab[b]=true;
+				tab+="<td id='x"+a+"y"+b+"' style='background-color:transparent'> </td>";
+			}
+			else{
+				ab[b]=false;
+				tab+="<td id='x"+a+"y"+b+"' style='background-color:black'> </td>";				
+			}
+		}
+			lines[a]=ab;
+			tab+="</tr>";
+
+	}
+	tab+="</table>";
+	document.getElementById('can').innerHTML=tab;
+}
+
+var rrRuleE=0;
+var tergRuleE=0;
+var updolrRuleE = Math.random();
+function  doLive(){
+rrRuleE++;
+linesx = new Array();
+for(t=0;t<lines.length;t++){
+li=new Array();
+ccoocc=lines[t];
+if(t==0){
+ccoocc=lines[(sliceheight-1)];
+}
+for(u=0;u<(slicelenth);u++){
+li[u]=ccoocc[u];
+li[(u+1)]=ccoocc[(u+1)];
+li[(u+2)]=ccoocc[(u+2)];	
+}		
+linesx[t]=li;
+}
+if((tergRuleE%4)==0){
+asas=slicelenth-1;
+for(t=1;t<asas;t++){
+for(u=1;u<(slicelenth-1);u++){
+som=0;	
+if(lines[(t-1)][(u)]){
+som++;
+}			
+if(lines[(t+1)][(u)]){
+som++;
+}
+if(lines[t][(u-1)]){
+som++;
+}
+if(lines[t][(u+1)]){
+som++;
+}
+me=lines[t][u];
+if(som!=2){
+if(lines[(t-1)][(u-(rrRuleE%2))]){
+linesx[t][u]=false;
+}
+}
+else{
+if( true || lines[(t-(rrRuleE%2))][(u+1)]){
+linesx[t][u]=true;
+}
+}
+}			
+}
+}
+if(updolrRuleE>=.5){
+if((tergRuleE%2)==0 ){
+asas=sliceheight-1;
+//if(oold==1){
+//asas=1;
+//}
+for(t=0;t<asas;t++){
+li=new Array();
+ccoocc=linesx[t];
+for(u=0;u<ccoocc.length;u++){
+li[u]=ccoocc[u];
+}			
+lines[t]=li;
+}
+}
+else{
+for(t=0;t<linesx.length;t++){
+li=new Array();
+ccoocc=linesx[t];
+for(u=0;u<ccoocc.length;u++){
+li[u]=ccoocc[u];
+}			
+lines[(sliceheight-t-1)]=li;
+}
+}
+}
+else{
+if((tergRuleE%2)==0){
+asas=sliceheight-1;
+//if(oold==1){
+//asas=1;
+//}
+for(t=0;t<linesx.length;t++){
+li=new Array();
+ccoocc=linesx[t];
+for(u=0;u<ccoocc.length;u++){
+li[u]=ccoocc[u];
+}			
+lines[t]=li;
+}
+}
+else{
+asas=sliceheight-1;
+//if(oold==1){
+//asas=1;
+//}
+for(t=0;t<linesx.length;t++){
+li=new Array();
+rj=new Array();
+ccoocc=linesx[t];
+for(u=0;u<ccoocc.length;u++){
+rj[u]=ccoocc[u];
+}
+for(u=0;u<rj.length;u++){
+li[(rj.length-u-1)]=ccoocc[u];
+}			
+lines[t]=li;
+}
+}
+}
+
+
+
+
+
+for(a=0;a<lines.length;a++){
+	ab=lines[a];
+	sdf=new Array();
+		for(b=0;b<slicelenth;b++){
+		sdf[b]=ab[b];
+		d=document.getElementById('x'+a+'y'+b);
+		if(ab[b]==false){
+			d.style.backgroundColor="transparent";
+		}
+		else{
+		d.style.backgroundColor="black";
+		}
+	}
+	//lines[a]=sdf;
+}
+
+
+
+
+
+tergRuleE++;
+setTimeout("doLive()", 50);
+}
+
+function doLivevv(){
+res=new Array();
+to++;
+arr=lines[0];
+ap=new Array();
+	for(b=0;b<slicelenth;b++){
+	ap[b]=arr[b];
+}
+res[0]=ap;
+arr=lines[(lines.length-1)];
+ap=new Array();
+	for(b=0;b<slicelenth;b++){
+	ap[b]=arr[b];
+}
+res[(lines.length-1)]=ap;
+
+
+
+
+for(a=1;a<(sliceheight-1);a++){
+	arrb=lines[(a-1)];
+	arro=lines[(a+1)];
+	
+	arr=lines[a];
+
+
+
+	ter=new Array();
+	for(b=1;b<(slicelenth-1);b++){
+			
+			l=arr[(b-1)];
+			lb=arrb[(b-1)];
+			lo=arro[(b-1)];
+			r=arr[(b+1)]
+			rb=arrb[(b+1)];
+			ro=arro[(b+1)]
+			o=arro[b];
+			be=arrb[b];
+			c=arr[b];
+
+			living=0;
+			if(l==true){
+				living+=1;
+			}
+			if(lb==true){
+				living+=1;
+			}
+			if(lo==true){
+				living+=1;
+			}
+			if(r==true){
+			living+=1;
+			}
+			if(ro==true){
+			living+=1;
+			}
+			if(rb==true){
+			living+=1;
+			}
+			if(o==true){
+			living+=1;
+			}
+			if(be==true){
+			living+=1;
+			}
+			niw=c;
+
+
+		if(c==true && (living==0 || living==1)){
+		niw=false;
+		}
+		if(c==true && living>=4){
+		niw=false;
+		}
+		if(c==true && ( (living==2) || (living==3) )){
+		niw=true;
+		}
+		
+		if(c==false &&(  (living==3) )){
+		niw=true;
+		}
+		
+			ter[b]=niw;
+	}
+	
+	ter[0]=arr[0];
+	
+	ter[(slicelenth-1)]=arr[(slicelenth-1)];
+	res[a]=ter;
+}
+
+
+
+for(a=0;a<sliceheight;a++){
+	ab=res[a];
+	sdf=new Array();
+		for(b=0;b<slicelenth;b++){
+		sdf[b]=ab[b];
+		d=document.getElementById('x'+a+'y'+b);
+		if(ab[b]==false){
+			d.style.backgroundColor="transparent";
+		}
+		else{
+		d.style.backgroundColor="black";
+		}
+	}
+	lines[a]=sdf;
+}
+
+
+
+
+
+tel++;
+setTimeout("doLive()", 50);
+}
+init();
+doLive();
+
+
+
+
+
+</script>

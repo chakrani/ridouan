@@ -1,0 +1,193 @@
+<div id='r' style='width:100%;height:100%'>
+</div>
+<script>
+
+var cr=1;
+var wi=400;
+var he=400;
+sgh="<table style='width:100%;height:100%' border=0>";
+fd=0;
+for(c=0;c<he;c++){
+sgh=sgh+"<tr>";
+	for(d=0;d<wi;d++){
+		sgh=sgh+"<td id='x"+c+"y"+d+"'></td>";
+	}
+sgh=sgh+"</tr>";
+
+}
+
+sgh=sgh+"</table>";
+
+document.getElementById('r').innerHTML=sgh;
+
+
+
+/*
+	File: _doSt3.php () in DOC_ROOT/timidity/
+	Web: https://www.sourceforge.net/projects/mk*
+	Web:https://www.sourceforge.net/projects/og*
+	Depends: *
+	Version: 1.2.2
+	Update: 2018/06/06
+	Author: Me
+	Description: One of Special CA Rule with special Pattern
+
+*/
+
+
+function numberTBAA(nr){
+var neej=nr;
+cc=neej.toString(2);
+return cc;
+}
+
+var sliceheight=400;
+var lines=new Array();
+f=new Array();
+for(m=0;m<sliceheight;m++){
+if(Math.random()>.5){
+f[m]=true;
+}
+else{
+f[m]=false;
+}
+
+}
+
+var nrspec=new Array();
+sftyo=0;
+nrspec[sftyo]=7;
+sftyo++;
+nrspec[sftyo]=15;
+sftyo++;
+nrspec[sftyo]=31;
+sftyo++;
+nrspec[sftyo]=55;
+sftyo++;
+nrspec[sftyo]=61;
+sftyo++;
+nrspec[sftyo]=62;
+sftyo++;
+nrspec[sftyo]=79;
+sftyo++;
+nrspec[sftyo]=91;
+sftyo++;
+nrspec[sftyo]=103;
+sftyo++;
+nrspec[sftyo]=110;
+sftyo++;
+nrspec[sftyo]=157;
+sftyo++;
+nrspec[sftyo]=167;
+sftyo++;
+nrspec[sftyo]=773;
+sftyo++;
+nrspec[sftyo]=1047;
+sftyo++;
+nrspec[sftyo]=1585;
+sftyo++;
+
+
+
+function shoSt(){
+	for(v=0;v<(cr%sliceheight);v++){
+		cs=lines[v];
+		for(w=0;w<sliceheight;w++){
+			if(cs[w]==true){
+				document.getElementById('x'+v+'y'+w).style.backgroundColor='black';
+			}
+			else{
+				 document.getElementById('x'+v+'y'+w).style.backgroundColor='white';
+
+			}
+
+		}
+	}
+}
+
+
+
+arraRuleVal=new Array();
+var cellunr=2;
+
+function doStRuleNr(){
+
+	ccs=lines[cr];
+	
+	
+
+if(arraRuleVal.length<2){
+
+        rezrwa=""+numberTBAA(nrspec[cellunr]);
+        for(ewaan=0;ewaan<32;ewaan++){
+                arraRuleVal[ewaan]=0;
+        }
+        nmore=31;
+        for(wwrc=(rezrwa.length-1);wwrc>=0;wwrc--){
+                wwcf=""+rezrwa.substring(wwrc,1);
+                if(wwcf=="0"){
+                        arraRuleVal[nmore]=0;
+                }
+                else{
+                  arraRuleVal[nmore]=1;
+
+                }
+                nmore--;
+        }
+
+}
+
+
+        asase=sliceheight;
+	asase=1;
+
+	for(vneb=0;vneb<asase;vneb++){
+
+
+	ccppa=new Array();
+
+
+dfrtww=sliceheight-2;
+
+	ccppa[0]=true;
+	ccppa[1]=true;
+
+	for(ewart=2;ewart<(dfrtww-0);ewart++){
+
+		ssso=0;
+		for(biixx=(ewart-2);biixx<(ewart+2);biixx++){
+		ccssw=ccs[biixx];
+		if(ccssw==true){
+			ccuss=1;
+		}
+		else{
+			ccuss=0;
+		}
+		ssso=ssso+(Math.pow(2, (biixx+2))*ccuss);
+		}
+		ccppa[(ewart-0)]=arraRuleVal[ssso];
+
+		
+	}
+
+		cr++;
+		lines[cr]=ccppa;
+		
+}
+
+shoSt();
+
+	setTimeout("doStRuleNr()", 200);
+	
+
+
+}
+
+doStRuleNr();
+
+
+
+
+
+
+</script>

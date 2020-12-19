@@ -1,0 +1,308 @@
+<div id='can'></div>
+<textarea id='collect' cols=10 rows=10 style='display:none;position:fixed;left:0;top:0;width:100%;heigt:100%'></textarea>
+<script>
+var sliceheight=100;
+var slicelenth=100;
+var lines=new Array();
+var randomnr=.1;
+function init(){
+tab="<table style='width:100%;height:100%;position:fixed;left:0;top:0' border=0 cellspacing=0 cellpadding=0>";
+for(a=0;a<sliceheight;a++){
+	ab=new Array();
+	tab+"<tr>";
+		for(b=0;b<slicelenth;b++){
+			if(Math.random()>.5){
+				ab[b]=true;
+				tab+="<td id='x"+a+"y"+b+"' style='background-color:transparent'> </td>";
+			}
+			else{
+				ab[b]=false;
+				tab+="<td id='x"+a+"y"+b+"' style='background-color:black'> </td>";				
+			}
+		}
+			lines[a]=ab;
+			tab+="</tr>";
+
+	}
+	tab+="</table>";
+	document.getElementById('can').innerHTML=tab;
+	
+
+			rule_set(nrspec[Math.floor(Math.random()*nrspec.length)]);		
+
+			currstate = new Array(sliceheight);
+			nextstate = new Array(sliceheight);
+			
+	
+			
+			for (var i = 0; i < sliceheight; i++) {
+				switch (starting) {
+					case 'r':
+						if (Math.floor(Math.random() * 2))
+							currstate[i] = true;
+						else currstate[i] = false;
+						break;
+				}
+			}
+			
+	currrow = -1;
+
+wow();
+
+
+for(v=0;v<(sliceheight+1);v++){
+a=cccd;
+if(a>=sliceheight){
+cccd=0;
+first=1;
+}
+a=cccd;
+	io=Math.random();
+	if(io<randomnr){
+				for (var i = 0; i < sliceheight; i++) {
+				switch (starting) {
+					case 'r':
+						if (Math.floor(Math.random() * 2))
+							currstate[i] = true;
+						else currstate[i] = false;
+						break;
+				}
+			}
+			rule_set(nrspec[Math.floor(Math.random()*nrspec.length)]);
+		
+	}
+res=new Array();
+wow();
+rs=new Array();
+for(a=0;a<currstate.length;a++){
+rs[a]=currstate[a];
+}
+ars[teg]=rs;
+teg++;
+if(first==1){
+	for(cc=(sliceheight-1);cc>=0;cc--){
+	ab=ars[(ars.length-cc-1)];
+	sdf=new Array();
+		for(b=0;b<ab.length;b++){
+		sdf[b]=ab[b];
+	
+		if(ab[b]==false){
+
+		}
+		else{
+	
+		}
+	}
+	lines[(sliceheight-1-cc)]=sdf;
+}
+}
+cccd++;
+			
+}
+}
+var nrspec=new Array();
+sftyo=0;
+function numberTBAA(nr){
+var neej=nr;
+cc=neej.toString(2);
+return cc;
+}
+function reverseString(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+a2=1;
+cd=1;
+c=0;
+function numberTBAA(nr){ var neej=nr; cc=neej.toString(2); return cc;}
+function reverseString(str) { var newString = ""; for (var i = str.length - 1; i >= 0; i--){ newString += str[i]; } return newString; }
+a2=1;
+cd=1;
+c=0;
+ret=0;
+bb=0;
+a2=1;
+cd=1;
+c=0;
+var cccd=0;
+var teg=0;
+var first=0;
+var ars=new Array();
+ret=0;
+rete=0;
+a2=1;
+cd=1;
+c=0;
+rete=0;
+bb=0;
+ret=0;
+for(t=0;t<Math.pow(2,16);t+=1){
+		fs=t.toString(2);
+		fs2=reverseString(fs);
+		sf=parseInt(fs2,2);
+		ds=(sf/2)*Math.pow(-1, (sf%2));
+		sdd=ds&sf;
+		bb+=sdd;
+				tw=t-1;
+			if((bb>Math.pow(2,4) && bb<Math.pow(2,7)) || (bb>Math.pow(2,16) && bb<Math.pow(2,17))){
+				if(!(ret==0 ||  ret==4 ||  ret==6 || ret==8 ||  ret==10 || ret==14 || ret==17 || ret==18 || ret==19 || ret==21 || ret== 22 || ret==23 || ret==2 || bb==35 || bb==38 || bb==49 || bb==54 || bb==79)){
+				nrspec[rete]=bb; 
+				rete++;			
+			}
+			ret++;
+		}		
+}
+bb=0;
+ret=rete;
+function removewithfilter(arr) { 
+            let outputArray = arr.filter(function(v, i, self) 
+            { 
+                return i == self.indexOf(v); 
+            });               
+            return outputArray; 
+        } 		
+nrspec=removewithfilter(nrspec);
+var lines=new Array();
+var sliceheight=100;
+var slicelenth=100;
+var begs=0;
+var cellunr=Math.floor(nrspec.length*Math.random());
+var rule = 0;
+var starting = "r";
+var currstate, nextstate;
+var timer;
+var currrow = 0;
+	function wow() {
+			var scroll = false;					
+			if (!scroll || currrow < slicelenth - 1) {
+				currrow++;
+				currrow %= slicelenth;								
+			} else {
+			}
+			for (var i = 0; i < sliceheight; i++) {
+	
+
+				var l,ll, c, r,rr;
+				if (i == 0) {
+					l = false;
+					ll= false;	
+					c = currstate[0]; 
+					r = currstate[1];
+					rr=currstate[2];
+				} 
+				else if(i==1){
+					ll=false;
+					l=currstate[0];
+					c=currstate[1];
+					r=currstate[2];
+					rr=currstate[3];
+				}
+				else if (i == sliceheight - 2) {
+					l = currstate[i-2]; 
+					ll=currstate[i-1]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=false;
+				}
+				
+				else if (i == sliceheight - 1) {
+					l = currstate[i-1];
+					ll = currstate[i-2];
+					c = currstate[i]; 
+					r = false;
+					rr=false;
+				} else {
+					l = currstate[i-1]; 
+					ll=currstate[i-2]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=currstate[i+2]
+				}
+	
+				var n = 0;
+				if (ll == true) n |= 16;
+				if (l == true) n |= 8;
+				if (c == true) n |= 4;
+				if (r == true) n |= 2;
+				if (rr == true) n |= 1;
+				
+				nextstate[i] = (rule & Math.pow(2, n)) > 0;
+				
+			}
+			
+			for (var i = 0; i < sliceheight; i++)
+				currstate[i] = nextstate[i];
+			
+			//lines[currrow]=currstate;
+			
+		}
+		
+
+	var ber=0;	
+
+		
+function rule_xor(num) {
+	rule = num;
+}
+		
+function rule_set(num) {
+		rule ^= num;  //Math.floor(num % Math.pow(2,8));		
+}				
+function doStep(){
+a=cccd;
+if(a>=sliceheight){
+cccd=0;
+first=1;
+}
+a=cccd;
+	io=Math.random();
+	if(io<randomnr){
+				for (var i = 0; i < sliceheight; i++) {
+				switch (starting) {
+					case 'r':
+						if (Math.floor(Math.random() * 2))
+							currstate[i] = true;
+						else currstate[i] = false;
+						break;
+				}
+			}
+			rule_set(nrspec[Math.floor(Math.random()*nrspec.length)]);
+		
+	}
+res=new Array();
+wow();
+rs=new Array();
+for(a=0;a<currstate.length;a++){
+rs[a]=currstate[a];
+}
+ars[teg]=rs;
+teg++;
+if(first==1){
+	for(cc=(sliceheight-1);cc>=0;cc--){
+	ab=ars[(ars.length-cc-1)];
+	sdf=new Array();
+		for(b=0;b<ab.length;b++){
+		sdf[b]=ab[b];
+		d=document.getElementById('x'+(sliceheight-1-cc)+'y'+(ab.length-1-b));
+		if(ab[b]==true){
+			d.style.backgroundColor="transparent";
+		}
+		else{
+		d.style.backgroundColor="black";
+		}
+	}
+	lines[(sliceheight-1-cc)]=sdf;
+}
+}
+cccd++;
+setTimeout("doStep()", 50);
+}
+init();
+doStep();
+</script>
+
+
+</body></html>

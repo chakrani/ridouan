@@ -1,0 +1,139 @@
+<html>
+<meta charset="UTF-8">
+<script>
+var incounts=0;
+var incounts2=0;
+var incounts3=0;
+var incounts4=0;
+var incounts5=0;
+
+function anifun(){
+	d=document.getElementById('dot0')
+	d.style.left=Math.round(incounts+10)+"%";
+	incounts+=5;
+	if(incounts==55  ){
+		setTimeout('anifun()', 2000);	
+	}
+	else{
+		if(incounts<115){
+			setTimeout('anifun()', (50+(incounts5/4)));
+		}	
+	}	
+}
+
+function anifun2(){
+	d=document.getElementById('dot1')
+	d.style.left=Math.round(incounts2+5)+"%";
+	incounts2+=5;
+	if(incounts2==55   ){
+		setTimeout('anifun2()', 2000);	
+	}
+	else{
+		if(incounts2<115){
+			if(incounts2>50){
+				setTimeout('anifun2()', (50+(incounts5/4)+8-50));
+			}
+			else{	
+				setTimeout('anifun2()', (50+(incounts5/4)+8));
+			}	
+		}
+	}	
+}
+function anifun3(){
+	d=document.getElementById('dot2')
+	d.style.left=Math.round(incounts3+0)+"%";
+	incounts3+=5;
+	if(incounts3==55   ){
+		setTimeout('anifun3()', 2000);	
+	}
+	else{
+		if(incounts3<115){
+			if(incounts3>50){
+				setTimeout('anifun3()', (50+(incounts5/4)+16-50));
+			}
+			else{	
+				setTimeout('anifun3()', (50+(incounts5/4)+16));
+			}		
+		}	
+	}	
+}
+
+function anifun4(){
+	d=document.getElementById('dot3')
+	d.style.left=Math.round(incounts4-5)+"%";
+	incounts4+=5;
+	if(incounts4==55 ){
+		setTimeout('anifun4()', 2000);	
+	}
+	else{
+		if(incounts4<115){
+			if(incounts4>50){
+				setTimeout('anifun4()', (50+(incounts5/4)+32-50));
+			}
+			else{
+				setTimeout('anifun4()', (50+(incounts5/4)+32));
+			}
+		}	
+	}	
+}
+function anifun5(){
+	d=document.getElementById('dot4')
+	d.style.left=Math.round(incounts5-10)+"%";
+
+
+	incounts5+=5;
+	if(incounts5==55 ){
+		setTimeout('anifun5()', 2000);	
+	}
+	else{
+
+
+
+		if(incounts5>50){
+			setTimeout('anifun5()', (50+(incounts5/4)+64-50));
+		}
+		else{
+			setTimeout('anifun5()', (50+(incounts5/4)+64));	
+		}
+	}
+	if(incounts5==105 ){
+		incounts5=0;
+		incounts4=0;
+		incounts3=0;
+		incounts2=0;
+		incounts=0;
+		anifun();
+		anifun2();
+		anifun3();
+		anifun4();
+	}	
+}
+
+
+
+function startpuntje(){
+	for(t=0;t<5;t++){
+		document.writeln("<div id='dot"+t+"' style='position:absolute;top:35%;left:0'><span 	style='font-size:50px;color:#EEEEFF'>.</span></div>");
+	}
+
+	anifun();
+	anifun2();
+	anifun3();
+	anifun4();
+	anifun5();
+}
+</script>
+<style type='text/css'>
+html,body{
+overflow:hidden;
+width:100%;
+height:100%;
+background-color:black;
+}
+</style>
+<body>
+<script>
+	startpuntje();
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+
+}
+.fullwidth-video {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        z-index: -1;
+        height: 111%;
+        width: 111%;
+        -webkit-transform-style: preserve-3d;
+        overflow: hidden;
+}
+.fullwidth-video video {
+        position: absolute;
+        z-index: -1;
+        top:50%;
+        left:50%;
+        height:auto;
+        width:auto;
+        min-width:100%;
+        min-height:100%;
+        transform:translate(-50%, -50%);
+        object-fit:cover;
+}
+</style>
+
+<script>
+var telw=0;
+
+function gef(){
+video=document.getElementById('v0');
+
+//fsf=Math.round(89*Math.random());
+//video.src="https://akki.sourceforge.io/videos/"+fsf+"/video.mp4?d=4";
+
+fsf=Math.round(55*Math.random());
+video.src="https://akki.sourceforge.io/videos/g"+fsf+"/video.mp4?d=4";
+
+video.play();
+video=document.getElementById('v1');
+
+
+//document.getElementById(v).style.display='none';
+}
+
+
+function pla(vy){
+vy.play();
+//document.getElementById(v).style.display='';
+
+}
+
+
+function switches(){
+
+d=document.getElementById('dv'+(telw%2));
+dd=document.getElementById('v'+(telw%2));
+
+dd.play();
+d.style.display='';
+telw++;
+e=document.getElementById('dv'+(telw%2));
+ee=document.getElementById('v'+(telw%2));
+e.style.display='none';
+fsf=Math.round(55*Math.random());
+ee.src="https://akki.sourceforge.io/videos/g"+fsf+"/video.mp4?d=4";
+
+}
+
+
+function ase(){
+d=document.getElementById('dv'+(telw%2));
+dd=document.getElementById('v'+(telw%2));
+
+dd.play();
+}
+
+</script>
+</head>
+
+<body onload='gef()'>
+
+<div class="fullwidth-video" id='dv0'>
+  <video  muted poster="" id='v0' >
+ 
+  </video>
+</div>
+
+<div class="fullwidth-video" id='dv1' style='display:none'>
+  <video  muted poster="" id='v1' >
+ 
+  </video>
+</div>
+<script>
+ now = new Date(); 
+var rep=1; 
+var secondsSinceEpoch = Math.round(now.getTime() / 1000)-10;
+function tos(){
+	 now = new Date();  
+ secondsSinceEpocht = Math.round(now.getTime() / 1000);
+	if((secondsSinceEpocht-secondsSinceEpoch)>14 && rep==1){
+	ase();
+	rep=0;
+	}
+	
+
+	if((secondsSinceEpocht-secondsSinceEpoch)>17){
+		secondsSinceEpoch = Math.round(now.getTime() / 1000);
+		switches();
+		rep=1;
+	}
+
+	setTimeout("tos()", 1500);
+}
+tos();
+</script>
+
+</body>
+</html>
+

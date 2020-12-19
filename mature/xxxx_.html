@@ -1,0 +1,150 @@
+<html>
+<style type='text/css'>
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+}
+
+</style>
+<body style='background-color:white'>
+<script>
+function fixs(){
+
+dsd=capital[Math.floor(Math.random()*capital.length)];
+cap=dsd.replace(" ", "_");
+fdf="https://maghreb.sourceforge.io/nm2/"+cap+"/Image"+Math.floor(19*Math.random())+".jpg";
+documen.getElementById('dummylo').src=fdf;
+document.getElementById('img2').style.backgroundImage="url("+fdf+")";
+}
+
+
+</script>
+<div style='background-position:center;background-size:100% 100%;width:120%;height:120%;position:fixed;left:-10%;top:-10%' id='img2' ></div>
+
+<div style='background-position:center;background-size:100% 100%;width:120%;height:120%;position:fixed;left:-10%;top:-10%' id='img'></div>
+
+<!--div style='background-position:center center;background-size:100% 100%;width:120%;height:120%;position:fixed;left:-10%;top:-10%' id='img2' ></div-->
+<script>
+
+
+var rrr="";
+var zoom=-1;
+var lefts=1;
+var ups=1;
+
+var zzoom=115;
+var llefts=0;
+var uups=0;
+var mz=1;
+function zz(){ 
+
+if(mz==1){
+if(zzoom>=118) {zoom=-1; }    if(zzoom<=100){ zoom=1; } zzoom=zzoom+(.17*zoom);
+document.getElementById('img').style.backgroundSize=zzoom+"% "+zzoom+"%";
+document.getElementById('img2').style.backgroundSize=zzoom+"% "+zzoom+"%";
+
+}
+
+if(Math.random()<.013){
+mz=mz*-1;
+}
+
+setTimeout("zz()", 140);  
+}
+
+function uu(){ if(uups>=5 || uups<=-5){ ups*=-1; }    if(Math.random()<.01){ ups*=-1; } uups=uups+(.125*ups);
+  document.getElementById('img').style.top=uups+"%";
+
+ document.getElementById('img2').style.top=uups+"%"; 
+if(Math.random()<.04){
+mz=mz*-1;
+}
+setTimeout("uu()", 125);
+
+}
+
+
+function ll(){ if(llefts>=5 || lleftss<=-5){ lefts*=-1; }    if(Math.random()<.0121){ lefts*=-1; } llefts=llefts+(.15*lefts);
+  document.getElementById('img').style.left=llefts+"%";
+
+ document.getElementById('img2').style.left=llefts+"%";
+setTimeout("ll()", 220);
+}
+
+zz();
+//uu();
+//ll();
+
+
+
+var tel=0;
+var tels=0;
+
+var aallcoutries="AFGHANISTAN|ALBANIA|ALGERIA|ANDORRA|ANGOLA|ANTIGUA-BARBUDA|ARGENTINA|ARMENIA|AUSTRALIA|AUSTRIA|AZERBAIJAN|BAHRAIN|BANGLADESH|BARBADOS|BELARUS|BELGIUM|BELIZE|BENIN|BHUTAN|BOLIVIA|BOSNIA-HERZEGOVINA|BOTSWANA|BRAZIL|BRUNEI|BULGARIA|BURKINA_FASO|BURUNDI|CABO_VERDE|CAMBODIA|CAMEROON|CANADA|CENTRAL_AFRICAN_REPUBLIC|CHAD|CHILE|CHINA|COLOMBIA|COMOROS|COSTA_RICA|CROATIA|CUBA|CYPRUS|CZECH_REPUBLIC|DENMARK|DJIBOUTI|DOMINICA|DOMINICAN_REPUBLIC|ECUADOR|EGYPT|EL_SALVADOR|EQUATORIAL_GUINEA|ERITREA|ESTONIA|ESWATINI|ETHIOPIA|FEDERATED_STATES_OF_MICRONESIA|FIJI|FINLAND|FRANCE|GABON|GEORGIA|GERMANY|GHANA|GREECE|GRENADA|GUATEMALA|GUINEA|GUINEA-BISSAU|GUYANA|HAITI|HONDURAS|HUNGARY|ICELAND|INDIA|INDONESIA|IRAN|IRELAND|ISRAEL|ITALY|JAMAICA|JAPAN|JORDAN|KAZAKHSTAN|KENYA|KIRIBATI|KOSOVO|KUWAIT|KYRGYZSTAN|LAOS|LATVIA|LEBANON|LESOTHO|LIBERIA|LIBYA|LIECHTENSTEIN|LITHUANIA|LUXEMBOURG|MADAGASCAR|MALAWI|MALAYSIA|MALDIVES|MALI|MALTA|MARSHALL_ISLANDS|MAURITANIA|MAURITIUS|MEXICO|MOLDOVA|MONACO|MONGOLIA|MONTENEGRO|MOROCCO|MOZAMBIQUE|MYANMAR|NAMIBIA|NAURU|NEPAL|NETHERLANDS|NEW_ZEALAND|NICARAGUA|NIGER|NIGERIA|NORTH_KOREA|NORTH_MACEDONIA|NORWAY|OMAN|PAKISTAN|PALAU|PALESTINE|PANAMA|PAPUA_NEW_GUINEA|PARAGUAY|PERU|PHILIPPINES|PHOTOGRAPHY|POLAND|PORTUGAL|QATAR|REPUBLIC_OF_THE_CONGO|ROMANIA|RUSSIA|RWANDA|SAINT_LUCIA|SAINT_VINCENT-THE_GRENADINES|SAMOA|SAN_MARINO|SAUDI_ARABIA|SENEGAL|SERBIA|SEYCHELLES|SIERRA_LEONE|SINGAPORE|SLOVAKIA|SLOVENIA|SOLOMON_ISLANDS|SOMALIA|SOUTH_AFRICA|SOUTH_KOREA|SOUTH_SUDAN|SPAIN|SRI_LANKA|SUDAN|SURINAME|SWEDEN|SWITZERLAND|TAJIKISTAN|TANZANIA|THAILAND|TIMOR-LESTE|TOGO|TONGA|TRINIDAD-TOBAGO|TUNISIA|TURKEY|TURKMENISTAN|TUVALU|UGANDA|UKRAINE|UNITED_ARAB_EMIRATES|UNITED_KINGDOM|UNITED_STATES|URUGUAY|UZBEKISTAN|VANUATU|VATICAN_CITY|VENEZUELA|VIETNAM|ZAMBIA|ZIMBABWE";
+var capital=aallcoutries.split("|");
+
+
+//pu=pu+1; capital[pu]="VATICAN_CITY";  
+var tek=20;
+
+function ww(){
+
+//document.getElementById('img').src="java/bin/XX"+(tel%100)+".jpg";
+
+
+if((tek%10)==0){
+
+
+if(tels>=.95){
+tels=0;
+
+if(tels>99){
+tel=0;
+}
+tel++;
+
+
+
+document.getElementById('img2').style.backgroundImage="url("+rrr+")"; //ocument.getElementById('img').style.backgroundImage;
+
+dsd=capital[Math.floor(Math.random()*capital.length)];
+cap=dsd.replace(" ", "_");
+
+rrrr="https://maghreb.sourceforge.io/nm2/"+cap+"/Image"+Math.floor(19*Math.random())+".jpg?v="+Math.random();
+document.getElementById('img').style.backgroundImage="url("+rrrr+")";
+rrr=rrrr;
+document.getElementById('img2').style.opacity=1-tels;
+document.getElementById('img').style.opacity=tels;
+tels=0;
+}
+
+//document.getElementById('img').opacity=0;
+}
+else{
+
+
+
+document.getElementById('img2').style.opacity=1-tels;
+document.getElementById('img').style.opacity=tels;
+
+}
+
+tels+=.025;
+
+//tek=tek-1;
+tek=tek+1;
+if(tels==.025){
+setTimeout("ww()", 2000);
+}
+else{
+setTimeout("ww()", 100);
+}
+
+}
+ww();
+</script>
+<img src='EMA.jpg' style='display:none;position:fixed;left:0;top:0;width:10px;height:10px' id='dummylo' onerror='fixs()'>
+<iframe src='ani.html' style='position:fixed;top:0;left:0;width:100%;height:100%' border=0 frameborder=0 scrolling='no' scrollbars='no'></iframe>
+</body>
+</html>

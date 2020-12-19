@@ -1,0 +1,258 @@
+<script>
+var nrspec=new Array();
+sftyo=0;
+/*nrspec[sftyo]=30;
+sftyo++;
+nrspec[sftyo]=60;
+sftyo++;
+nrspec[sftyo]=90;
+sftyo++;
+nrspec[sftyo]=102;
+sftyo++;
+nrspec[sftyo]=110;
+sftyo++;
+*/
+
+
+
+var tels=sftyo;
+nrspec[sftyo]=772;
+sftyo++;nrspec[sftyo]=1098;
+sftyo++;nrspec[sftyo]=1154;
+sftyo++;nrspec[sftyo]=1510;
+sftyo++;nrspec[sftyo]=1162;
+sftyo++;nrspec[sftyo]=1564;
+sftyo++;nrspec[sftyo]=1295;
+sftyo++;nrspec[sftyo]=999;
+sftyo++;nrspec[sftyo]=2122;
+sftyo++;nrspec[sftyo]=2154;
+sftyo++;nrspec[sftyo]=2180;
+sftyo++;nrspec[sftyo]=1291;
+sftyo++;nrspec[sftyo]= 973;
+sftyo++;nrspec[sftyo]= 901;
+sftyo++;nrspec[sftyo]= 1283;
+sftyo++;nrspec[sftyo]= 909;
+sftyo++;nrspec[sftyo]= 919;
+sftyo++;nrspec[sftyo]= 965;
+sftyo++;nrspec[sftyo]= 967;
+sftyo++;nrspec[sftyo]= 1315;
+sftyo++;nrspec[sftyo]= 1895;
+sftyo++;nrspec[sftyo]= 837;
+sftyo++;nrspec[sftyo]= 839;
+sftyo++;nrspec[sftyo]= 845;
+sftyo++;nrspec[sftyo]=  1230;
+sftyo++;nrspec[sftyo]=  1319;
+sftyo++;nrspec[sftyo]=  1222;
+sftyo++;nrspec[sftyo]=  2190;
+sftyo++;nrspec[sftyo]=  2186;
+sftyo++;nrspec[sftyo]=  2212;
+sftyo++;nrspec[sftyo]=  807;
+sftyo++;nrspec[sftyo]=  813;
+sftyo++;nrspec[sftyo]=  2023;
+sftyo++;nrspec[sftyo]=  2021;
+sftyo++;nrspec[sftyo]=  1323;
+sftyo++;nrspec[sftyo]=  1325;
+sftyo++;nrspec[sftyo]=  1487;
+sftyo++;nrspec[sftyo]=  1887;
+sftyo++;nrspec[sftyo]=  2003;
+sftyo++;nrspec[sftyo]=  1451;
+sftyo++;nrspec[sftyo]=  1960;
+sftyo++;nrspec[sftyo]=  1698;
+sftyo++;nrspec[sftyo]=  1415;
+sftyo++;nrspec[sftyo]=  1431;
+sftyo++;nrspec[sftyo]=  1383;
+sftyo++;nrspec[sftyo]=  1445;
+sftyo++;nrspec[sftyo]=  1957;
+sftyo++;nrspec[sftyo]=  1702;
+sftyo++;nrspec[sftyo]=  1975;
+sftyo++;nrspec[sftyo]=  1807;
+sftyo++;nrspec[sftyo]=  1837;
+sftyo++;nrspec[sftyo]=  1939;
+sftyo++;nrspec[sftyo]=  1967;
+sftyo++;nrspec[sftyo]=  1965;
+sftyo++;nrspec[sftyo]=  2983;
+sftyo++;nrspec[sftyo]=  2541;
+sftyo++;nrspec[sftyo]=  2535;
+sftyo++;nrspec[sftyo]=  2530;
+sftyo++;nrspec[sftyo]=  2503;
+sftyo++;nrspec[sftyo]=  2511;
+sftyo++;nrspec[sftyo]=  2307;
+sftyo++;nrspec[sftyo]=  2311;
+sftyo++;nrspec[sftyo]=  2315;
+sftyo++;nrspec[sftyo]=  2349;
+sftyo++;nrspec[sftyo]=  2405;
+sftyo++;nrspec[sftyo]=  2407;
+sftyo++;nrspec[sftyo]=  2423;
+sftyo++;nrspec[sftyo]=  2413;
+sftyo++;nrspec[sftyo]=  2682;
+sftyo++;nrspec[sftyo]=  2690;
+sftyo++;nrspec[sftyo]=  2692;
+sftyo++;nrspec[sftyo]=  2858;
+sftyo++;nrspec[sftyo]=  2917;
+
+
+
+
+
+
+
+var lines=new Array();
+var sliceheight=200;
+var slicelenth=100;
+var begs=0;
+var cellunr=Math.floor(nrspec.length*Math.random());
+
+		var rule = 0;
+		var starting = "r";
+		
+		var canvas, context;
+		
+		var currstate, nextstate;
+		
+		var timer;
+		var currrow = 0;
+		
+		function doStRuleNr() {
+		
+			canvas = document.getElementById("canvas");
+			context = canvas.getContext('2d');
+			rule_set((nrspec[tels]-1));
+			document.title=nrspec[tels]+"";
+			tels++;
+
+			
+			doStRuleNrc();
+						//tels++;
+						//nrspec[cellunr]=tels;
+						
+						setTimeout("doStRuleNr()", 2500);
+						
+		}
+		
+		function wow() {
+			var scroll = false;
+						
+
+			
+			if (!scroll || currrow < slicelenth - 1) {
+				currrow++;
+				currrow %= slicelenth;
+				
+				
+			} else {
+				var data = context.getImageData(0, 1, sliceheight, slicelenth - 1);
+				context.putImageData(data, 0, 0);
+				tel++;
+	
+			}
+		
+			for (var i = 0; i < sliceheight; i++) {
+				if (currstate[i])
+					context.fillStyle = "rgb(0, 0, 0)";
+				else context.fillStyle = "rgb(255, 255, 255)";
+				context.fillRect(Math.round(i*1.5), Math.round(currrow*1.5), Math.round(1.5*screen.width/sliceheight), Math.round(1.5*screen.height/slicelenth));
+			
+				var l,ll, c, r,rr;
+				if (i == 0) {
+					l = false;
+					ll= false;	
+					c = currstate[0]; 
+					r = currstate[1];
+					rr=currstate[2];
+				} 
+				else if(i==1){
+					ll=false;
+					l=currstate[0];
+					c=currstate[1];
+					r=currstate[2];
+					rr=currstate[3];
+				}
+				else if (i == sliceheight - 2) {
+					l = currstate[i-2]; 
+					ll=currstate[i-1]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=false;
+				}
+				
+				else if (i == sliceheight - 1) {
+					l = currstate[i-1];
+					ll = currstate[i-2];
+					c = currstate[i]; 
+					r = false;
+					rr=false;
+				} else {
+					l = currstate[i-1]; 
+					ll=currstate[i-2]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=currstate[i+2]
+				}
+	
+				var n = 0;
+				if (ll == true) n |= 16;
+				if (l == true) n |= 8;
+				if (c == true) n |= 4;
+				if (r == true) n |= 2;
+				if (rr == true) n |= 1;
+				
+				nextstate[i] = (rule & Math.pow(2, n)) > 0;
+				
+			}
+			
+			for (var i = 0; i < sliceheight; i++)
+				currstate[i] = nextstate[i];
+			
+			lines[currrow]=currstate;
+			
+		}
+		
+		function doStRuleNrc(){
+			context.clearRect(0, 0, sliceheight, slicelenth);
+			currstate = new Array(sliceheight);
+			nextstate = new Array(sliceheight);
+			
+	
+			
+			for (var i = 0; i < sliceheight; i++) {
+				switch (starting) {
+					case 'r':
+						if (Math.floor(Math.random() * 2))
+							currstate[i] = true;
+						else currstate[i] = false;
+						break;
+				}
+			}
+			
+			currrow = -1;
+	
+			unpause();
+		}
+		
+		function pause() {
+
+		}
+		
+		function unpause() {
+			if(begs==0){
+				for(b=0;b<sliceheight;b++){
+					wow();
+				}
+			}
+				else{
+				wow();
+			}
+		}
+		
+		function rule_xor(num) {
+			rule ^= num;
+		}
+		
+		function rule_set(num) {
+			rule = Math.floor(num % Math.pow(2, 32));		
+		}
+		
+		
+		document.write("<canvas id='canvas' style='width:100%;height:100%'></canvas>");
+		doStRuleNr();
+		</script>

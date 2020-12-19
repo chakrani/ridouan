@@ -1,0 +1,464 @@
+<html><head><style>
+
+#ak{
+-webkit-backdrop-filter: grayscale(100%);
+backdrop-filter: grayscale(100%);
+-webkit-backdrop-filter: grayscale(100%);
+backdrop-filter: grayscale(100%);
+
+}
+#divq{
+-webkit-backdrop-filter: grayscale(100%);
+backdrop-filter: grayscale(100%);
+}
+</style>
+
+<script>
+var nrspec=new Array();
+sftyo=0;
+function numberTBAA(nr){
+var neej=nr;
+cc=neej.toString(2);
+return cc;
+}
+function reverseString(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+var tels=sftyo;
+a2=1;
+cd=1;
+c=0;
+function numberTBAA(nr){ var neej=nr; cc=neej.toString(2); return cc;}
+function reverseString(str) { var newString = ""; for (var i = str.length - 1; i >= 0; i--){ newString += str[i]; } return newString; }
+var tels=sftyo;
+a2=1;
+cd=1;
+c=0;
+rete=0;
+bb=0;
+ret=0;
+for(t=0;t<Math.pow(2,15);t+=1){
+		fs=t.toString(2);
+		fs2=reverseString(fs);
+		sf=parseInt(fs2,2);
+		ds=(sf/2)*Math.pow(-1, (sf%2));
+		sdd=ds&sf;
+		bb+=sdd;
+				
+
+
+			if(bb>Math.pow(2,4) && bb<Math.pow(2,8)){
+				nrspec[rete]=bb; 
+		
+		rete++;			
+	}
+
+			
+			
+			
+			ret++;
+			
+}
+bb=0;
+ret=rete;
+
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
+function removewithfilter(arr) { 
+            let outputArray = arr.filter(function(v, i, self) 
+            { 
+                  
+                return i == self.indexOf(v); 
+            }); 
+              
+            return outputArray; 
+} 
+
+
+nrspec=removewithfilter(nrspec);
+
+var lines=new Array();
+var sliceheight=400;
+var slicelenth=200;
+var begs=0;
+var cellunr=Math.floor(nrspec.length*Math.random());
+
+var mtx=0;
+var mtxx=50+Math.round(25*Math.random());
+var mtxxr=10+Math.round(10*Math.random());
+var mtxxg=10+Math.round(10*Math.random());
+var mtxxb=10+Math.round(10*Math.random());
+
+
+var mtxxrr=400+Math.round(400*Math.random());
+var mtxxgg=400+Math.round(400*Math.random());
+var mtxxbb=400+Math.round(400*Math.random());
+
+var rule = 0;
+var starting = "r";
+var canvas, context;		
+var currstate, nextstate;
+var timer;
+var currrow = 0;
+var bl = new Array();
+bl[0]=1;
+bl[1]=1;
+
+
+ mtxxr=2+Math.round(2*Math.random());
+
+ mtxxb=2+Math.round(2*Math.random());
+ mtxxg=2+Math.round(2*Math.random());
+var rule2=nrspec[Math.floor(nrspec.length*Math.random())];
+var rulex=nrspec[Math.floor(nrspec.length*Math.random())];
+
+
+function doStRuleNr() {	
+bl[0]=1;
+bl[1]=1;	
+			canvas = document.getElementById("canvas");
+			context = canvas.getContext('2d');
+			rule=nrspec[Math.floor(nrspec.length*Math.random())];
+			rule_set(rule);
+			
+			
+					
+			doStRuleNrc();
+			
+
+			
+
+
+	
+}
+
+var mmtt=0;
+function wow() {
+			var scroll = false;					
+			if (!scroll || currrow < slicelenth - 1) {
+				currrow++;
+mtx+=5;
+				currrow %= slicelenth;								
+			} else {
+				var data = context.getImageData(0, 1, sliceheight, slicelenth - 1);
+				context.putImageData(data, 0, 0);
+				tel++;
+			}
+			for (var i = 0; i < sliceheight; i++) {
+
+
+
+			xrx=(-.5*sliceheight)+(i+200);
+
+			yry=-(slicelenth/2)+(currrow+25);
+
+
+
+rule=rulex;
+				if (currstate[i] && ((xrx*xrx*.5)+(yry*yry*.5))>1560) {
+					rood=127+(127*(Math.sin(mtx/mtxxr)));
+mtx+=.07651;
+
+
+ groen=127+(127*(Math.sin((mtx/mtxxg)+mmtt )));
+mmtt=mmtt+.232;
+
+  blauw=127+(127*(Math.sin(mtx/mtxxb)));
+
+
+
+					context.fillStyle = "rgba("+Math.floor(1*(rood+groen+blauw)/3)+","+Math.floor(1*(rood+groen+blauw)/(3*1))+","+Math.floor(1*(rood+groen+blauw)/(3*1))+",1)";
+			
+
+
+				}
+				else { 
+
+context.fillStyle =  "transparent";	
+				
+					}
+				
+				var element = document.getElementById('canvas');
+				var positionInfo = element.getBoundingClientRect();
+				var height = positionInfo.height;
+				var width = positionInfo.width
+				context.fillRect(Math.round(i*1), Math.round(currrow*1), Math.round(1*width/sliceheight), Math.round(1*height/slicelenth));
+			if(rule>127){
+				var l,ll, c, r,rr;
+				if (i == 0) {
+					l = false;
+					ll= false;	
+					c = currstate[0]; 
+					r = currstate[1];
+					rr=currstate[2];
+				} 
+				else if(i==1){
+					ll=false;
+					l=currstate[0];
+					c=currstate[1];
+					r=currstate[2];
+					rr=currstate[3];
+				}
+				else if (i == sliceheight - 2) {
+					l = currstate[i-2]; 
+					ll=currstate[i-1]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=false;
+				}
+				
+				else if (i == sliceheight - 1) {
+					l = currstate[i-1];
+					ll = currstate[i-2];
+					c = currstate[i]; 
+					r = false;
+					rr=false;
+				} else {
+					l = currstate[i-1]; 
+					ll=currstate[i-2]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=currstate[i+2]
+				}	
+				var n = 0;
+				if (ll == true) n |= 16;
+				if (l == true) n |= 8;
+				if (c == true) n |= 4;
+				if (r == true) n |= 2;
+				if (rr == true) n |= 1;
+				}
+				else{
+					var l, c, r;
+					if (i == 0) {
+						l = false; c = currstate[0]; r = currstate[1];
+					} else if (i == sliceheight - 1) {
+						l = currstate[i-1]; c = currstate[i]; r = false;
+					} else {
+						l = currstate[i-1]; c = currstate[i]; r = currstate[i+1];
+					}	
+					var n = 0;
+					if (l == true) n |= 4;
+					if (c == true) n |= 2;
+					if (r == true) n |= 1;
+					nextstate[i] = (rule & Math.pow(2, n)) > 0;
+				}
+				nextstate[i] = (rule & Math.pow(2, n)) > 0;
+			}			
+			for (var i = 0; i < sliceheight; i++){
+				currstate[i] = nextstate[i];
+
+			}
+		lines[currrow]=currstate;			
+}		
+
+
+
+
+function wowi() {
+			var scroll = false;					
+			if (!scroll || currrow < slicelenth - 1) {
+				currrow++;
+				currrow %= slicelenth;								
+			} else {
+
+				tel++;
+			}
+			for (var i = 0; i < sliceheight; i++) {
+				if (currstate[i]){
+				
+				}
+				else { 
+
+					}
+		
+			if(rule>127){
+				var l,ll, c, r,rr;
+				if (i == 0) {
+					l = false;
+					ll= false;	
+					c = currstate[0]; 
+					r = currstate[1];
+					rr=currstate[2];
+				} 
+				else if(i==1){
+					ll=false;
+					l=currstate[0];
+					c=currstate[1];
+					r=currstate[2];
+					rr=currstate[3];
+				}
+				else if (i == sliceheight - 2) {
+					l = currstate[i-2]; 
+					ll=currstate[i-1]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=false;
+				}
+				
+				else if (i == sliceheight - 1) {
+					l = currstate[i-1];
+					ll = currstate[i-2];
+					c = currstate[i]; 
+					r = false;
+					rr=false;
+				} else {
+					l = currstate[i-1]; 
+					ll=currstate[i-2]
+					c = currstate[i]; 
+					r = currstate[i+1];
+					rr=currstate[i+2]
+				}	
+				var n = 0;
+				if (ll == true) n |= 16;
+				if (l == true) n |= 8;
+				if (c == true) n |= 4;
+				if (r == true) n |= 2;
+				if (rr == true) n |= 1;
+				}
+				else{
+					var l, c, r;
+					if (i == 0) {
+						l = false; c = currstate[0]; r = currstate[1];
+					} else if (i == sliceheight - 1) {
+						l = currstate[i-1]; c = currstate[i]; r = false;
+					} else {
+						l = currstate[i-1]; c = currstate[i]; r = currstate[i+1];
+					}	
+					var n = 0;
+					if (l == true) n |= 4;
+					if (c == true) n |= 2;
+					if (r == true) n |= 1;
+					nextstate[i] = (rule & Math.pow(2, n)) > 0;
+				}
+				nextstate[i] = (rule & Math.pow(2, n)) > 0;
+			}			
+			for (var i = 0; i < sliceheight; i++){
+				currstate[i] = nextstate[i];
+
+			}
+		lines[currrow]=currstate;			
+}		
+
+function doStRuleNrc(){
+		
+			currstate = new Array(sliceheight);
+			nextstate = new Array(sliceheight);			
+			for (var i = 0; i < sliceheight; i++) {
+				switch (starting) {
+					case 'r':
+						if (Math.floor(Math.random() * 2))
+							currstate[i] = true;
+						else currstate[i] = false;
+						break;
+				}
+			}
+	currrow = -1;
+	unti();
+}
+		
+function doStRuleNrc2(){
+			context.clearRect(0, 0, sliceheight, slicelenth);
+			currstate = new Array(sliceheight);
+			nextstate = new Array(sliceheight);			
+			for (var i = 0; i < sliceheight; i++) {
+				switch (starting) {
+					case 'r':
+						if (Math.floor(Math.random() * 2))
+							currstate[i] = true;
+						else currstate[i] = false;
+						break;
+				}
+			}
+	currrow = -1;
+	unt();
+}
+		
+function unti() {
+
+
+	if(Math.random()<.08){
+
+                        currstate = new Array(sliceheight);
+                        nextstate = new Array(sliceheight);
+                        for (var i = 0; i < sliceheight; i++) {
+                                switch (starting) {
+                                        case 'r':
+                                                if (Math.floor(Math.random() * 2))
+                                                        currstate[i] = true;
+                                                else currstate[i] = false;
+                                                break;
+                                }
+                        }
+
+
+mtxx=40+Math.round(35*Math.random());
+	
+
+
+ mtxxg=80+(160*Math.cos(mtx/mtxxgg));
+ mtxxr=80+(160*Math.cos(mtx/(mtxxrr*mtxxrr)));
+ mtxxb=80+(160*Math.cos(mtx/mtxxbb));
+
+
+rulex=nrspec[Math.floor(nrspec.length*Math.random())];
+
+
+
+        if(Math.random()<.08){
+rule2=nrspec[Math.floor(nrspec.length*Math.random())];
+
+
+}
+
+
+        if(Math.random()<.04){
+rulex=nrspec[Math.floor(nrspec.length*Math.random())];
+
+
+}
+
+	}
+
+		wow();
+		setTimeout("unti()", 50);
+
+}
+	
+
+
+function unt() {
+	if(begs==0){
+		for(b=0;b<slicelenth;b++){
+			wowi();
+		}
+	}
+	else{
+		wow();
+	}
+}
+	
+function rule_xor(num) {
+	rule ^= num;
+}
+		
+function rule_set(num) {
+		rule = num;	
+}				
+
+
+</script>
+</head><body onload="doStRuleNr()">
+<iframe src="za.html" style="width:100%;height:100%;position;fixed;left:0;top:0" frameborder="0" border="0" scrollbars="no" scrolling="no"></iframe>
+<canvas id='canvas' style='position:fixed;left:-15;top:0;width:110%;height:110%'></canvas>
+<div id="ak" style="position:fixed;top:0;left:0;width:30%;height:100%">
+</div>
+
+<div id="divq" style="position:fixed;top:0;left:0;width:30%;height:100%">
+</div>
+
+</body></html>

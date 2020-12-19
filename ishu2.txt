@@ -1,0 +1,10 @@
+Abstract: How To Use Physics Concepts To Generate Music
+
+ Writer: R Massoud
+ E-mail: rbenmass.rbm@gmail.com
+ Depend: Timidity (fluidsynth),Lame (ffmpeg) PHP, Apache
+	 (alternative),   Apache or Other Fav. Webserver
+ Change: 07/23/20
+ Scopes: NO WARRENTY GIVEN,  NOT RESPONSISBLE FOR DAMAGE
+ 
+[+]  :: 08/31/2020 - NL

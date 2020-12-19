@@ -1,0 +1,151 @@
+﻿<html>
+<div id='a' style='opacity:0;position:fixed;left:0;top:0;width:100%;height:100%'>
+</div>
+
+<div id='b' style='opacity:0;position:fixed;left:0;top:0;width:100%;height:100%'>
+</div>
+
+<script>
+
+var tel=0;
+var da=new Array();
+da[3]="temperature.html";
+da[2]="wind.html";
+da[0]="cloud.html";
+da[1]="pressure.html";
+da[4]="windspeed.html";
+da[5]="humidity.html";
+da[6]="cape.html";
+da[7]="worldw.html";
+
+var dat=new Array();
+dat[3]=10000;
+dat[2]=10000;
+dat[0]=10000;
+dat[1]=10000;
+dat[4]=10000;
+dat[5]=10000;
+dat[6]=10000;
+dat[7]=60000;
+
+
+
+var xmlhttprr = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");
+
+
+var weers="";
+function triggeredrr() {
+        if ((xmlhttprr.readyState == 4) && (xmlhttprr.status == 200)) {
+                weers=xmlhttprr.responseText;
+        }
+}
+
+function getww(){
+        xmlhttprr = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttprr.onreadystatechange = triggeredrr;
+        xmlhttprr.open("GET", "https://freeshell.de/~trans1/worldww.php", true);
+        xmlhttprr.send(null);
+}
+getww();
+
+
+
+
+
+
+
+var tel=0;
+var n=0;
+
+
+
+function wai(){
+if(n==2){
+
+
+if((tel%2)==0){
+document.getElementById('b').style.opacity=1;
+document.getElementById('a').style.opacity=0;
+}
+else{
+document.getElementById('a').style.opacity=1;
+document.getElementById('b').style.opacity=0;
+}
+}
+n++;
+setTimeout("wai()", 3000);
+}
+wai();
+
+
+
+
+ds="<iframe style='position:fixed;top:-1%;left:-0%;width:100%;height:101%' src='"+da[(tel%da.length)]+"'></iframe>";
+document.getElementById('a').style.opacity=0;
+document.getElementById('a').style.opacity=0;
+document.getElementById('a').innerHTML=ds;
+document.getElementById('b').innerHTML=ds;
+tel++;
+
+function dsa(){
+
+
+if((tel%2)==0){
+
+if((tel%da.length)==7 && false){
+ds=weers;
+}
+else{
+
+ds="<iframe style='position:fixed;top:-1%;left:-0%;width:100%;height:101%' src='"+da[(tel%da.length)]+"'></iframe>";
+
+
+}
+
+
+
+document.getElementById('a').style.opacity=0;
+document.getElementById('a').innerHTML=ds;
+
+
+
+}
+else{
+
+if((tel%da.length)==7 && false){
+ds=weers;
+}
+else{
+ds="<iframe style='position:fixed;top:-1%;left:-0%;width:100%;height:101%' src='"+da[(tel%da.length)]+"'></iframe>";
+
+}
+
+
+
+document.getElementById('b').innerHTML=ds;
+document.getElementById('b').style.opacity=0;
+}
+
+
+
+
+n=0;
+tel++;
+
+setTimeout('dsa()', dat[((tel-1)%da.length)]);
+
+}
+dsa();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
